@@ -11,12 +11,14 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" >OpgaveNavn</a>
+    <a class="navbar-brand" >Tour De France</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" id="navbar">
-                <li class="nav-item"><a class="nav-link" href="#" id="page-crud">Opret/Editér/Slet</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" id="page-shirt">Trøje dirigering</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" id="page-competition">Hold konkurrence</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-crud">A) Opret/Editér/Slet</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-shirt">B) Trøje dirigering</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-competition">C) Hold konkurrence</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-allcyclist">D) Alle cykelryttere</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-country">E) Bedste lande</a></li>
             </ul>
         </div>
 
@@ -40,6 +42,8 @@
         <input type="text" id="add-cyclist-spurtpoints" placeholder="spurtpoint">
         <input type="text" id="add-cyclist-shirtid" placeholder="trøje id">
         <input type="text" id="add-cyclist-teamid" placeholder="cykelhold id">
+        <input type="text" id="add-cyclist-time" placeholder="tid">
+        <input type="text" id="add-cyclist-country" placeholder="land">
         <button type="submit" id="btn-add-cyclist">Opret Cykelrytter</button>
     </form>
 
@@ -52,6 +56,8 @@
         <input type="text" id="edit-cyclist-spurtpoints" placeholder="spurtpoint">
         <input type="text" id="edit-cyclist-shirtid" placeholder="trøje id">
         <input type="text" id="edit-cyclist-teamid" placeholder="cykelhold id">
+        <input type="text" id="edit-cyclist-time" placeholder="tid">
+        <input type="text" id="edit-cyclist-country" placeholder="land">
         <button type="submit" id="btn-edit-cyclist">Edit Cykelrytter</button>
     </form>
 
@@ -94,6 +100,27 @@
 
 </template>
 
-<template>
+<template data-id="page-allcyclist">
+    <h2>Alle cykelister udregnet på tid</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>mountainPoints</th>
+            <th>spurtPoints</th>
+            <th>teamName</th>
+            <th>Time</th>
+            <th>Trøje</th>
+            <th>Land</th>
+        </tr>
+        </thead>
+        <tbody id="tbl-body-all" class="cyclist-tr"></tbody>
+    </table>
+
+
+</template>
+
+<template data-id="page-country">
 
 </template>
