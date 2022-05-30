@@ -65,7 +65,6 @@ function editCyclist(){
             cyclingTeam: teamId,
             time: cyclistTime,
             country: cyclistCountry
-
         })
     }).then(res => res.json())
 }
