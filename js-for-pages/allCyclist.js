@@ -1,8 +1,10 @@
-//Finds all riders, but this methods does not allow more rider with the same time
+import {handleHttpErrors} from "../fetchUtils.js";
+
+//Finds all riders, but this methods does not allow more rider with the same time in database
 export function allCyclist(){
     fetch("http://localhost:8080/api/cyclist")
 
-        .then(res => res.json())
+        .then(res => handleHttpErrors(res))
         .then(data => {
             const array = []
             const arraySorted = []
@@ -11,16 +13,13 @@ export function allCyclist(){
                 array.push(dataTime)
             }
             array.sort()
-            console.log(data)
             for(let i = 0; i < data.length; i++){
                 for(let j = 0; j < data.length; j++){
                     if(data[j].time == array[i]){
-                        console.log(data[j])
                         arraySorted.push(data[j])
                     }
                 }
             }
-            console.log(arraySorted)
             const rows = arraySorted.map(d =>
                 `
                             <tr>

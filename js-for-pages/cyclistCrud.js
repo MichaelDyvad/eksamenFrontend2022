@@ -1,11 +1,10 @@
-
 export function clicked(){
     document.getElementById("btn-add-cyclist").onclick = addNewCyclist
     document.getElementById("btn-edit-cyclist").onclick = editCyclist
     document.getElementById("btn-delete-cyclist").onclick = deleteCyclist
 }
 
-
+//Adds a new cyclist to database
 function addNewCyclist(){
     const cyclistName = document.getElementById("add-cyclist-name").value
     const cyclistAge = document.getElementById("add-cyclist-age").value
@@ -35,8 +34,21 @@ function addNewCyclist(){
             country: cyclistCountry
         })
     })
+    //reset
+    /*
+    cyclistName.value = ""
+    cyclistAge.value= ""
+    cyclistMP.value= ""
+    cyclistSP.value= ""
+    cyclistShirt.value= ""
+    cyclistTeam.value= ""
+    cyclistTime.value= ""
+    cyclistCountry.value= ""
+
+     */
 }
 
+//Edits cyclist to database
 function editCyclist(){
     const cyclistId = document.getElementById("edit-id").value
     const cyclistName = document.getElementById("edit-cyclist-name").value
@@ -66,9 +78,11 @@ function editCyclist(){
             time: cyclistTime,
             country: cyclistCountry
         })
-    }).then(res => res.json())
+    })
+
 }
 
+//Deletes cyclist on id
 function deleteCyclist(){
     const cyclistId = document.getElementById("delete-cyclist-id").value
 

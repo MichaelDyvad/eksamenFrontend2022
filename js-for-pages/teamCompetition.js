@@ -1,12 +1,14 @@
+import {handleHttpErrors} from "../fetchUtils.js";
 
 export function clickedTeam(){
     document.getElementById("btn-search").onclick = team
 }
 
+//Finds a whole team sorted on time
 function team(){
     const teamName = document.getElementById("teamname-value").value
     fetch("http://localhost:8080/api/cyclist/" + teamName)
-        .then(res => res.json())
+        .then(res => handleHttpErrors(res))
         .then(data => {
             const array = []
             const arraySorted = []
@@ -36,8 +38,5 @@ function team(){
                             `
             ).join("")
             document.getElementById("tbl-body").innerHTML = rows
-
-
         })
-
 }

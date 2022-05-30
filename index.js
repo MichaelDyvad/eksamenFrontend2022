@@ -8,9 +8,11 @@ function renderMenuItems(evt) {
     const element = evt.target
     setActive(element)
     const id = element.id;
-    renderTemplate(id)  //This setups the HTML for the page
+    renderTemplate(id)
     switch (id) {
-        //Here you can execute JavaScript for the selected page
+        case "page-home": {
+            break
+        }
         case "page-crud": {
             clicked()
         }
@@ -30,4 +32,4 @@ function renderMenuItems(evt) {
 }
 
 document.getElementById("navbar").onclick = renderMenuItems;
-showPage("page-home") //Set the default page to render
+showPage("page-home")
