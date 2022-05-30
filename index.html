@@ -11,13 +11,15 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" >Tour De France</a>
+
         <div class="collapse navbar-collapse" id="navbarNav">
+
             <ul class="navbar-nav" id="navbar">
-                <li class="nav-item"><a class="nav-link" href="#" id="page-crud">A) Opret/Editér/Slet</a></li>
+                <a class="navbar-brand" id="page-home" href="#" >Tour De France</a>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-crud">A) Opret/Editer/Slet</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" id="page-shirt">B) Trøje dirigering</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" id="page-competition">C) Hold konkurrence</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" id="page-allcyclist">D, E) Alle cykelryttere og Lande</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-allcyclist">D, E) Alle cykelryttere og lande</a></li>
             </ul>
         </div>
 </nav>
@@ -29,13 +31,17 @@
 
 <!-- Templates-->
 
+<template data-id="page-home">
+    <h4 class="center">Velkommen til en oversigt over tour de france</h4>
+    <img src="https://free-cdn.tv2i.dk/users/editorial/images/c685d149-2e12-4aba-ae95-35c0b3e2de4d.jpg?t%5B%5D=crop%3Ax%3D0%2Cy%3D85%2Cwidth%3D5000%2Cheight%3D2813&t%5B%5D=maxSize%3Aheight%3D351%2Cwidth%3D624&t%5B%5D=compress%3Alevel%3D82&publicKey=cms-ro&accessToken=4ecc566d5f4501bd48e7392bb075e20fe401fb6dc7fc42e69427116faac56263" class="center">
+</template>
 
 <!-- Crud template-->
 <template data-id="page-crud">
 
     <div class="d-flex justify-content-center">
     <form class="add-cyclist-class">
-        <h4>Tilføj Cykelrytter</h4>
+        <h4>Tilføj rytter</h4>
         <input class="form-control" type="text" id="add-cyclist-name" placeholder="navn">
         <input class="form-control" type="text" id="add-cyclist-age" placeholder="alder">
         <input class="form-control" type="text" id="add-cyclist-mountainpoints" placeholder="bjergpoint">
@@ -53,7 +59,7 @@
 
     <div class="d-flex justify-content-center">
     <form class="edit-cyclist-class">
-        <h4>Editér rytter</h4>
+        <h4>Editer rytter</h4>
         <input class="form-control" type="text" id="edit-id" placeholder="id på rytter der skal editeres">
         <input class="form-control" type="text" id="edit-cyclist-name" placeholder="navn">
         <input class="form-control" type="text" id="edit-cyclist-age" placeholder="alder">
@@ -82,8 +88,8 @@
 
 <!-- Shirt template-->
 <template data-id="page-shirt">
-    <h4>Trøje dirigering udfra data</h4>
-
+    <h4>Trøje dirigering</h4>
+    <br>
     <table class="table table-striped table-dark">
         <tr>
             <th>Gul Trøje</th>

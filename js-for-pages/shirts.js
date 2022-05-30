@@ -1,8 +1,10 @@
+import {handleHttpErrors} from "../fetchUtils.js";
 
+//Finds the right shirt on data, but does not update the foreign key in cyclist entity
 export function calculateShirts(){
 
     fetch("http://localhost:8080/api/cyclist")
-        .then(res => res.json())
+        .then(res => handleHttpErrors(res))
         .then(data => {
             //Calculates the yellow shirt
             const array = []
@@ -56,9 +58,6 @@ export function calculateShirts(){
                 }
             }
         })
-
-
-
 }
 
 
