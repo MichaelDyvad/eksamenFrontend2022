@@ -26,9 +26,6 @@ function renderMenuItems(evt) {
             allCyclist()
             break
         }
-        case "page-country": {
-            break
-        }
     }
 }
 
