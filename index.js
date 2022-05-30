@@ -1,5 +1,5 @@
 import { renderTemplate, setActive, showPage } from "./utils.js"
-
+import {clicked} from "./js-for-pages/cyclistCrud.js";
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -8,8 +8,8 @@ function renderMenuItems(evt) {
     renderTemplate(id)  //This setups the HTML for the page
     switch (id) {
         //Here you can execute JavaScript for the selected page
-        case "page-home": {
-            break
+        case "page-crud": {
+            clicked()
         }
         case "page-navn": {
             break
