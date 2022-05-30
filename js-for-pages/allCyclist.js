@@ -1,6 +1,7 @@
 //Finds all riders, but this methods does not allow more rider with the same time
 export function allCyclist(){
     fetch("http://localhost:8080/api/cyclist")
+
         .then(res => res.json())
         .then(data => {
             const array = []
@@ -10,14 +11,16 @@ export function allCyclist(){
                 array.push(dataTime)
             }
             array.sort()
+            console.log(data)
             for(let i = 0; i < data.length; i++){
                 for(let j = 0; j < data.length; j++){
-                    if(array[j] == data[i].time){
-                        //console.log(array[i])
+                    if(data[j].time == array[i]){
+                        console.log(data[j])
                         arraySorted.push(data[j])
                     }
                 }
             }
+            console.log(arraySorted)
             const rows = arraySorted.map(d =>
                 `
                             <tr>
@@ -33,5 +36,7 @@ export function allCyclist(){
                             `
             ).join("")
             document.getElementById("tbl-body-all").innerHTML = rows
+
+
         })
 }

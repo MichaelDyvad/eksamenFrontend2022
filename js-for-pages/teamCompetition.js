@@ -25,6 +25,7 @@ function team(){
             const rows = arraySorted.map(d =>
                 `
                             <tr>
+                                <td>${d.id}</td>
                                 <td>${d.name}</td>
                                 <td>${d.age}</td>
                                 <td>${d.mountainPoints}</td>

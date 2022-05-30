@@ -7,10 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="./styles/style.css" rel="stylesheet">
     <script src="./index.js" type="module"></script>
-    <title>Document</title>
+    <title>Tour de France</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" >Tour De France</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" id="navbar">
@@ -20,7 +20,6 @@
                 <li class="nav-item"><a class="nav-link" href="#" id="page-allcyclist">D, E) Alle cykelryttere og Lande</a></li>
             </ul>
         </div>
-
 </nav>
 <div id="content"></div>
 </body>
@@ -30,88 +29,115 @@
 
 <!-- Templates-->
 
+
+<!-- Crud template-->
 <template data-id="page-crud">
-    <h2>About</h2>
-
-    <h4>Tilføj Cykelrytter</h4>
+    <div class="d-flex justify-content-center">
     <form class="add-cyclist-class">
-        <input type="text" id="add-cyclist-name" placeholder="navn">
-        <input type="text" id="add-cyclist-age" placeholder="alder">
-        <input type="text" id="add-cyclist-mountainpoints" placeholder="bjergpoint">
-        <input type="text" id="add-cyclist-spurtpoints" placeholder="spurtpoint">
-        <input type="text" id="add-cyclist-shirtid" placeholder="trøje id">
-        <input type="text" id="add-cyclist-teamid" placeholder="cykelhold id">
-        <input type="text" id="add-cyclist-time" placeholder="tid">
-        <input type="text" id="add-cyclist-country" placeholder="land">
-        <button type="submit" id="btn-add-cyclist">Opret Cykelrytter</button>
-    </form>
+        <h4>Tilføj Cykelrytter</h4>
+        <input class="form-control" type="text" id="add-cyclist-name" placeholder="navn">
+        <input class="form-control" type="text" id="add-cyclist-age" placeholder="alder">
+        <input class="form-control" type="text" id="add-cyclist-mountainpoints" placeholder="bjergpoint">
+        <input class="form-control" type="text" id="add-cyclist-spurtpoints" placeholder="spurtpoint">
+        <input class="form-control" type="text" id="add-cyclist-shirtid" placeholder="trøje id">
+        <input class="form-control" type="text" id="add-cyclist-teamid" placeholder="cykelhold id">
+        <input class="form-control" type="text" id="add-cyclist-time" placeholder="tid">
+        <input class="form-control" type="text" id="add-cyclist-country" placeholder="land">
 
-    <h4>Editér rytter</h4>
+        <button class="btn btn-dark" type="submit" id="btn-add-cyclist">Opret Cykelrytter</button>
+    </form>
+    </div>
+
+    <br>
+
+    <div class="d-flex justify-content-center">
     <form class="edit-cyclist-class">
-        <input type="text" id="edit-id" placeholder="id på rytter der skal editeres">
-        <input type="text" id="edit-cyclist-name" placeholder="navn">
-        <input type="text" id="edit-cyclist-age" placeholder="alder">
-        <input type="text" id="edit-cyclist-mountainpoints" placeholder="bjergpoint">
-        <input type="text" id="edit-cyclist-spurtpoints" placeholder="spurtpoint">
-        <input type="text" id="edit-cyclist-shirtid" placeholder="trøje id">
-        <input type="text" id="edit-cyclist-teamid" placeholder="cykelhold id">
-        <input type="text" id="edit-cyclist-time" placeholder="tid">
-        <input type="text" id="edit-cyclist-country" placeholder="land">
-        <button type="submit" id="btn-edit-cyclist">Edit Cykelrytter</button>
+        <h4>Editér rytter</h4>
+        <input class="form-control" type="text" id="edit-id" placeholder="id på rytter der skal editeres">
+        <input class="form-control" type="text" id="edit-cyclist-name" placeholder="navn">
+        <input class="form-control" type="text" id="edit-cyclist-age" placeholder="alder">
+        <input class="form-control" type="text" id="edit-cyclist-mountainpoints" placeholder="bjergpoint">
+        <input class="form-control" type="text" id="edit-cyclist-spurtpoints" placeholder="spurtpoint">
+        <input class="form-control" type="text" id="edit-cyclist-shirtid" placeholder="trøje id">
+        <input class="form-control" type="text" id="edit-cyclist-teamid" placeholder="cykelhold id">
+        <input class="form-control" type="text" id="edit-cyclist-time" placeholder="tid">
+        <input class="form-control" type="text" id="edit-cyclist-country" placeholder="land">
+        <button class="btn btn-dark" type="submit" id="btn-edit-cyclist">Edit Cykelrytter</button>
     </form>
+    </div>
 
-    <h4>Slet rytter</h4>
+    <br>
+
+    <div class="d-flex justify-content-center">
     <form class="delete-cyclist-class">
-        <input type="text" id="delete-cyclist-id" placeholder="id på rytter">
-        <button id="btn-delete-cyclist">Slet rytter</button>
+        <h4>Slet rytter</h4>
+        <input  class="form-control" type="text" id="delete-cyclist-id" placeholder="id på rytter">
+        <button class="btn btn-dark" id="btn-delete-cyclist">Slet rytter</button>
     </form>
+    </div>
 </template>
 
+
+
+<!-- Shirt template-->
 <template data-id="page-shirt">
-    <h2>Trøje dirigering udfra data</h2>
+    <h4>Trøje dirigering udfra data</h4>
     <p>Gul trøje: <span id="span-yellow"></span></p>
     <p>Bjerg trøje: <span id="span-mountain"></span></p>
     <p>Grøn trøje: <span id="span-green"></span></p>
     <p>hvid trøje: <span id="span-white"></span></p>
 </template>
 
+
+
+<!-- Team Competition template-->
 <template data-id="page-competition">
-    <h2>Konkurrence på holdet</h2>
+    <h4>Konkurrence på holdet</h4>
     <form class="find-team">
-        <input type="text" id="teamname-value" placeholder="holdnavn">
-        <button type="submit" id="btn-search">Søg</button>
+        <select id="teamname-value">
+            <option value="TotalEnergies">TotalEnergies</option>
+            <option value="TeamDSM">TeamDSM</option>
+            <option value="Cofidis">Cofidis</option>
+        </select>
+        <button class="btn btn-dark" type="submit" id="btn-search">Søg</button>
     </form>
 
-    <h5>Målt på den enkelte tid performance</h5>
-    <table class="table">
-        <thead>
+    <br>
+
+    <table class="table table-striped table-dark">
+        <thead class="thead-light">
         <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>mountainPoints</th>
-            <th>spurtPoints</th>
-            <th>teamName</th>
-            <th>Time</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">mountainPoints</th>
+            <th scope="col">spurtPoints</th>
+            <th scope="col">teamName</th>
+            <th scope="col">Time</th>
         </tr>
         </thead>
         <tbody id="tbl-body" class="cyclist-tr"></tbody>
     </table>
-
 </template>
 
+
+
+<!-- All cyclist template-->
 <template data-id="page-allcyclist">
-    <h2>Alle cykelister udregnet på tid</h2>
-    <table class="table">
-        <thead>
+    <br>
+    <h4>Alle cykelister udregnet på tid</h4>
+
+    <table class="table table-striped table-dark">
+        <thead >
         <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>mountainPoints</th>
-            <th>spurtPoints</th>
-            <th>teamName</th>
-            <th>Time</th>
-            <th>Trøje</th>
-            <th>Land</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">mountainPoints</th>
+            <th scope="col">spurtPoints</th>
+            <th scope="col">teamName</th>
+            <th scope="col">Time</th>
+            <th scope="col">Trøje</th>
+            <th scope="col">Land</th>
         </tr>
         </thead>
         <tbody id="tbl-body-all" class="cyclist-tr"></tbody>
