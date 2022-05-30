@@ -13,6 +13,8 @@ function addNewCyclist(){
     const cyclistSP = document.getElementById("add-cyclist-spurtpoints").value
     const cyclistShirt = document.getElementById("add-cyclist-shirtid").value
     const cyclistTeam = document.getElementById("add-cyclist-teamid").value
+    const cyclistTime = document.getElementById("add-cyclist-time").value
+    const cyclistCountry = document.getElementById("add-cyclist-country").value
 
     const shirtId = {id: cyclistShirt}
     const teamId = {id: cyclistTeam}
@@ -28,7 +30,9 @@ function addNewCyclist(){
             mountainPoints: cyclistMP,
             spurtPoints: cyclistSP,
             shirt: shirtId,
-            cyclingTeam: teamId
+            cyclingTeam: teamId,
+            time: cyclistTime,
+            country: cyclistCountry
         })
     })
 }
@@ -41,6 +45,8 @@ function editCyclist(){
     const cyclistSP = document.getElementById("edit-cyclist-spurtpoints").value
     const cyclistShirt = document.getElementById("edit-cyclist-shirtid").value
     const cyclistTeam = document.getElementById("edit-cyclist-teamid").value
+    const cyclistTime = document.getElementById("edit-cyclist-time").value
+    const cyclistCountry = document.getElementById("edit-cyclist-country").value
 
     const shirtId = {id: cyclistShirt}
     const teamId = {id: cyclistTeam}
@@ -56,7 +62,10 @@ function editCyclist(){
             mountainPoints: cyclistMP,
             spurtPoints: cyclistSP,
             shirt: shirtId,
-            cyclingTeam: teamId
+            cyclingTeam: teamId,
+            time: cyclistTime,
+            country: cyclistCountry
+
         })
     }).then(res => res.json())
 }

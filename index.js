@@ -2,6 +2,7 @@ import { renderTemplate, setActive, showPage } from "./utils.js"
 import {clicked} from "./js-for-pages/cyclistCrud.js";
 import {calculateShirts} from "./js-for-pages/shirts.js";
 import {clickedTeam} from "./js-for-pages/teamCompetition.js";
+import {allCyclist} from "./js-for-pages/allCyclist.js";
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -19,6 +20,13 @@ function renderMenuItems(evt) {
         }
         case "page-competition": {
             clickedTeam()
+            break
+        }
+        case "page-allcyclist": {
+            allCyclist()
+            break
+        }
+        case "page-country": {
             break
         }
     }

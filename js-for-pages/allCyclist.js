@@ -1,11 +1,7 @@
 
-export function clickedTeam(){
-    document.getElementById("btn-search").onclick = team
-}
+export function allCyclist(){
+    fetch("http://localhost:8080/api/cyclist")
 
-function team(){
-    const teamName = document.getElementById("teamname-value").value
-    fetch("http://localhost:8080/api/cyclist/" + teamName)
         .then(res => res.json())
         .then(data => {
             const array = []
@@ -15,13 +11,16 @@ function team(){
                 array.push(dataTime)
             }
             array.sort()
+            console.log(data)
             for(let i = 0; i < data.length; i++){
                 for(let j = 0; j < data.length; j++){
                     if(data[j].time == array[i]){
+                        console.log(data[j])
                         arraySorted.push(data[j])
                     }
                 }
             }
+            console.log(arraySorted)
             const rows = arraySorted.map(d =>
                 `
                             <tr>
@@ -31,12 +30,13 @@ function team(){
                                 <td>${d.spurtPoints}</td>
                                 <td>${d.teamName}</td>
                                 <td>${d.time}</td>
+                                <td>${d.shirt}</td>
+                                <td>${d.country}</td>
                             </tr>
                             `
             ).join("")
-            document.getElementById("tbl-body").innerHTML = rows
+            document.getElementById("tbl-body-all").innerHTML = rows
 
 
         })
-
 }
