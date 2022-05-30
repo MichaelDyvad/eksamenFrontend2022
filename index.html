@@ -32,6 +32,7 @@
 
 <!-- Crud template-->
 <template data-id="page-crud">
+
     <div class="d-flex justify-content-center">
     <form class="add-cyclist-class">
         <h4>Tilføj Cykelrytter</h4>
@@ -82,10 +83,29 @@
 <!-- Shirt template-->
 <template data-id="page-shirt">
     <h4>Trøje dirigering udfra data</h4>
-    <p>Gul trøje: <span id="span-yellow"></span></p>
-    <p>Bjerg trøje: <span id="span-mountain"></span></p>
-    <p>Grøn trøje: <span id="span-green"></span></p>
-    <p>hvid trøje: <span id="span-white"></span></p>
+
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Gul Trøje</th>
+            <th>Bjerg Trøje</th>
+            <th>Grøn Trøje</th>
+            <th>Hvid Trøje</th>
+        </tr>
+        <tr>
+            <td><span id="span-yellow"></span></td>
+            <td><span id="span-mountain"></span></td>
+            <td><span id="span-green"></span></td>
+            <td><span id="span-white"></span></td>
+        </tr>
+    </table>
+
+    <p>
+        ● Gule trøje: den rytter med den samlede hurtigste tid <br>
+        ● Bjergtrøje: den rytter med flest bjergpoint <br>
+        ● Grøn trøje: den rytter med flest spurtpoint <br>
+        ● Hvide trøje: den rytter med samlet hurtigste tid, og alder under 26 år.
+    </p>
+
 </template>
 
 
@@ -108,12 +128,12 @@
         <thead class="thead-light">
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">mountainPoints</th>
-            <th scope="col">spurtPoints</th>
-            <th scope="col">teamName</th>
-            <th scope="col">Time</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Alder</th>
+            <th scope="col">BjergPoints</th>
+            <th scope="col">SpurtPoints</th>
+            <th scope="col">HoldName</th>
+            <th scope="col">Tid</th>
         </tr>
         </thead>
         <tbody id="tbl-body" class="cyclist-tr"></tbody>
@@ -130,12 +150,12 @@
     <table class="table table-striped table-dark">
         <thead >
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">mountainPoints</th>
-            <th scope="col">spurtPoints</th>
-            <th scope="col">teamName</th>
-            <th scope="col">Time</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Alder</th>
+            <th scope="col">BjergPoints</th>
+            <th scope="col">SpurtPoints</th>
+            <th scope="col">HoldNavn</th>
+            <th scope="col">Tid</th>
             <th scope="col">Trøje</th>
             <th scope="col">Land</th>
         </tr>
