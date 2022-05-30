@@ -34,18 +34,6 @@ function addNewCyclist(){
             country: cyclistCountry
         })
     })
-    //reset
-    /*
-    cyclistName.value = ""
-    cyclistAge.value= ""
-    cyclistMP.value= ""
-    cyclistSP.value= ""
-    cyclistShirt.value= ""
-    cyclistTeam.value= ""
-    cyclistTime.value= ""
-    cyclistCountry.value= ""
-
-     */
 }
 
 //Edits cyclist to database
