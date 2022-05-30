@@ -1,4 +1,3 @@
-import{handleHttpErrors} from "../fetchUtils.js";
 
 export function clicked(){
     document.getElementById("btn-add-cyclist").onclick = addNewCyclist
