@@ -14,7 +14,7 @@
     <a class="navbar-brand" >OpgaveNavn</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" id="navbar">
-                <li class="nav-item"><a class="nav-link" href="#" id="page-home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="page-crud">Opret/Editér/Slet</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" id="page-navn">NavnPage</a></li>
             </ul>
         </div>
@@ -28,8 +28,37 @@
 
 <!-- Templates-->
 
-<template data-id="page-home">
+<template data-id="page-crud">
     <h2>About</h2>
+
+    <h4>Tilføj Cykelrytter</h4>
+    <form class="add-cyclist-class">
+        <input type="text" id="add-cyclist-name" placeholder="navn">
+        <input type="text" id="add-cyclist-age" placeholder="alder">
+        <input type="text" id="add-cyclist-mountainpoints" placeholder="bjergpoint">
+        <input type="text" id="add-cyclist-spurtpoints" placeholder="spurtpoint">
+        <input type="text" id="add-cyclist-shirtid" placeholder="trøje id">
+        <input type="text" id="add-cyclist-teamid" placeholder="cykelhold id">
+        <button type="submit" id="btn-add-cyclist">Opret Cykelrytter</button>
+    </form>
+
+    <h4>Editér rytter</h4>
+    <form class="edit-cyclist-class">
+        <input type="text" id="edit-id" placeholder="id på rytter der skal editeres">
+        <input type="text" id="edit-cyclist-name" placeholder="navn">
+        <input type="text" id="edit-cyclist-age" placeholder="alder">
+        <input type="text" id="edit-cyclist-mountainpoints" placeholder="bjergpoint">
+        <input type="text" id="edit-cyclist-spurtpoints" placeholder="spurtpoint">
+        <input type="text" id="edit-cyclist-shirtid" placeholder="trøje id">
+        <input type="text" id="edit-cyclist-teamid" placeholder="cykelhold id">
+        <button type="submit" id="btn-edit-cyclist">Edit Cykelrytter</button>
+    </form>
+
+    <h4>Slet rytter</h4>
+    <form class="delete-cyclist-class">
+        <input type="text" id="delete-cyclist-id" placeholder="id på rytter">
+        <button id="btn-delete-cyclist">Slet rytter</button>
+    </form>
 </template>
 
 <template data-id="page-navn">
