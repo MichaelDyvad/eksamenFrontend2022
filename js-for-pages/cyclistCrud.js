@@ -18,7 +18,7 @@ function addNewCyclist(){
     const shirtId = {id: cyclistShirt}
     const teamId = {id: cyclistTeam}
 
-    fetch("http://localhost:8080/api/cyclist", {
+    fetch("https://tourdefrancewebapp.azurewebsites.net/api/cyclist/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -51,7 +51,7 @@ function editCyclist(){
     const shirtId = {id: cyclistShirt}
     const teamId = {id: cyclistTeam}
 
-    fetch("http://localhost:8080/api/cyclist/" + cyclistId, {
+    fetch("https://tourdefrancewebapp.azurewebsites.net/api/cyclist/" + cyclistId, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -74,7 +74,7 @@ function editCyclist(){
 function deleteCyclist(){
     const cyclistId = document.getElementById("delete-cyclist-id").value
 
-    fetch("http://localhost:8080/api/cyclist/" + cyclistId, {
+    fetch("https://tourdefrancewebapp.azurewebsites.net/api/cyclist/" + cyclistId, {
         method: "DELETE"
     })
 }

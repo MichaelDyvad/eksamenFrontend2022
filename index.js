@@ -15,6 +15,7 @@ function renderMenuItems(evt) {
         }
         case "page-crud": {
             clicked()
+            break
         }
         case "page-shirt": {
             calculateShirts()

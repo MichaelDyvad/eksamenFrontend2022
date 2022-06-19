@@ -7,9 +7,11 @@ export function clickedTeam(){
 //Finds a whole team sorted on time
 function team(){
     const teamName = document.getElementById("teamname-value").value
-    fetch("http://localhost:8080/api/cyclist/" + teamName)
+    fetch("https://tourdefrancewebapp.azurewebsites.net/api/cyclist/" + teamName)
         .then(res => handleHttpErrors(res))
         .then(data => {
+            let dataSorted = data.sort((a, b) => (a.time) - (b.time))
+            /*
             const array = []
             const arraySorted = []
             for(let i = 0; i < data.length; i++){
@@ -24,7 +26,9 @@ function team(){
                     }
                 }
             }
-            const rows = arraySorted.map(d =>
+             */
+
+            const rows = dataSorted.map(d =>
                 `
                             <tr>
                                 <td>${d.id}</td>
